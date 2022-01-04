@@ -1,20 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:context="http://www.springframework.org/schema/context"
-    xsi:schemaLocation="
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="
     http://www.springframework.org/schema/beans   
     http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
     http://www.springframework.org/schema/context 
     http://www.springframework.org/schema/context/spring-context-3.1.xsd
 ">
 
-<bean id="miInforme" class="inversion_of_control.Informe">
+	<bean id="miInforme" class="inversion_of_control.Informe">
 
-</bean>
+	</bean>
 
-<bean id="miEmpleado" class="inversion_of_control.JefeEmpleado">
-	<constructor-arg ref="miInforme"></constructor-arg>
-</bean>
+	<bean id="miEmpleado" class="inversion_of_control.JefeEmpleado">
+		<constructor-arg ref="miInforme"></constructor-arg>
+	</bean>
+
+	<bean id="miSecretarioEmpleado"
+		class="inversion_of_control.SecretarioEmpleado">
+		<property name="informeNuevo" ref="miInforme"></property>
+		<property name="email" value="secretario@gmail.com"></property>
+		<property name="nombreEmpresa" value="EmpresaSpring"></property>
+	</bean>
 
 </beans>
