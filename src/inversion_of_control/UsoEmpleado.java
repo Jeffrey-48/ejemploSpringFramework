@@ -16,6 +16,12 @@ public class UsoEmpleado {
 		System.out.println(carlos.getInforme());
 		System.out.println(carlos.getEmail());
 		System.out.println(carlos.getNombreEmpresa());
+		System.out.println("inyeccion por archivo externo");
+		JefeEmpleado jose = contexto.getBean("miEmpleado", JefeEmpleado.class);
+		System.out.println(jose.getTareas());
+		System.out.println(jose.getInforme());
+		System.out.println(jose.getEmail());
+		System.out.println(jose.getNombreEmpresa());
 		contexto.close();
 	}
 

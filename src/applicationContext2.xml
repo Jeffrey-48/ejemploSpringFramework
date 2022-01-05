@@ -9,23 +9,13 @@
     http://www.springframework.org/schema/context/spring-context-3.1.xsd
 ">
 
-	<context:property-placeholder location="classpath:datosEmpresa.propiedades"/>
-
 	<bean id="miInforme" class="inversion_of_control.Informe">
 
-	</bean>
-
-	<bean id="miEmpleado" class="inversion_of_control.JefeEmpleado">
-		<constructor-arg ref="miInforme"></constructor-arg>
-		<property name="email" value="${email}"></property>
-		<property name="nombreEmpresa" value="${nombreEmpresa}"></property>
 	</bean>
 
 	<bean id="miSecretarioEmpleado"
 		class="inversion_of_control.SecretarioEmpleado">
 		<property name="informeNuevo" ref="miInforme"></property>
-		<property name="email" value="secretario@gmail.com"></property>
-		<property name="nombreEmpresa" value="EmpresaSpring"></property>
 	</bean>
 
 </beans>
