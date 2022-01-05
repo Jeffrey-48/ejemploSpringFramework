@@ -14,7 +14,7 @@
 	</bean>
 
 	<bean id="miSecretarioEmpleado"
-		class="inversion_of_control.SecretarioEmpleado">
+		class="inversion_of_control.SecretarioEmpleado" scope="prototype">
 		<property name="informeNuevo" ref="miInforme"></property>
 	</bean>
 
