@@ -37,6 +37,16 @@ public class JefeEmpleado implements Empleado {
 		this.email = email;
 	}
 	
+	//Crear metodo init, ejecuta tareas antes de que el bean este disponible
 	
-
+	public void init() {
+		System.out.println("Metodo init, instrucciones antes de que el bean este listo");
+	}
+	
+	//crear metodo destroy, ejecuta tareas despues de que el bean haya sido utilizado
+	
+	public void destroy() {
+		System.out.println("Metodo destroy, instrucciones despues de utilizar el bean");
+	}
+	
 }
